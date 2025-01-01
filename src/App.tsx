@@ -1,10 +1,11 @@
 import "./App.css";
+import Hero from "./features/hero";
 
 function App() {
 	return (
-		<>
-			<p></p>
-		</>
+		<div className="px-[50px]">
+			<Hero />
+		</div>
 	);
 }
 
