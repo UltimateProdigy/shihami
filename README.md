@@ -25,7 +25,7 @@ A modern React application with Web3 integration, featuring a clean and responsi
 1. Clone the repository:
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/UltimateProdigy/shihami.git
 ```
 
 2. Install dependencies:
