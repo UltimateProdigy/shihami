@@ -19,7 +19,7 @@ export default function Navbar() {
 	return (
 		<div
 			ref={NavbarRef}
-			className="flex justify-between items-center px-10 pt-6"
+			className="flex justify-between items-center px-10 pt-10"
 		>
 			<Logo />
 			<Navlinks />
