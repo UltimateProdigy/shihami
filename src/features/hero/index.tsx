@@ -2,12 +2,14 @@ import ActionButton from "../../components/actionButton";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import SplitType from "split-type";
+import Card from "../../components/card/index.";
 
 export default function Hero() {
 	const headingRef = useRef<HTMLHeadingElement>(null);
 	const paragraphRef = useRef<HTMLParagraphElement>(null);
 	const buttonsRef = useRef<HTMLDivElement>(null);
 	const containerRef = useRef<HTMLDivElement>(null);
+	const cardsRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
 		const headingText = new SplitType(headingRef.current!, {
@@ -92,40 +94,6 @@ export default function Hero() {
 				},
 				"-=0.2"
 			);
-		gsap.to(headingText.words, {
-			y: "random(-8,8)",
-			rotation: "random(-5,5)",
-			duration: "random(2,3)",
-			repeat: -1,
-			yoyo: true,
-			ease: "sine.inOut",
-			stagger: {
-				amount: 1.5,
-				from: "random",
-			},
-		});
-		const buttons = buttonsRef.current?.children;
-		if (buttons) {
-			Array.from(buttons).forEach((button, index) => {
-				button.addEventListener("mouseenter", () => {
-					gsap.to(button, {
-						scale: 1.1,
-						duration: 0.3,
-						ease: "back.out(2)",
-						backgroundColor: index === 0 ? "#ff3366" : "#2a2a2a",
-					});
-				});
-
-				button.addEventListener("mouseleave", () => {
-					gsap.to(button, {
-						scale: 1,
-						duration: 0.3,
-						ease: "power2.out",
-						backgroundColor: "transparent",
-					});
-				});
-			});
-		}
 		return () => {
 			headingText.revert();
 			paragraphText.revert();
@@ -133,24 +101,47 @@ export default function Hero() {
 	}, []);
 
 	return (
-		<div ref={containerRef} className="visibility-hidden">
-			<h1
-				ref={headingRef}
-				className="text-white font-semibold text-[50px] mt-[100px] leading-[60px]"
-			>
-				EXPLORE, CREATE AND <br /> SELL YOUR NFT'S ON <br />
-				SHIHAMI
-			</h1>
-			<p ref={paragraphRef} className="mt-8 font-thin">
-				Shihami is the World's First And Largest NFT/Avatar Marketplace
-			</p>
-			<div ref={buttonsRef} className="flex mt-8">
-				<ActionButton size="large" className="mr-4">
-					Explore More
-				</ActionButton>
-				<ActionButton size="large" variant="secondary">
-					Cancel
-				</ActionButton>
+		<div className="flex justify-between mt-10">
+			<div ref={containerRef} className="visibility-hidden">
+				<h1
+					ref={headingRef}
+					className="text-white font-semibold text-[50px] mt-[100px] leading-[60px]"
+				>
+					EXPLORE, CREATE AND <br /> SELL YOUR NFT'S ON <br />
+					SHIHAMI
+				</h1>
+				<p ref={paragraphRef} className="mt-8 font-thin">
+					Shihami is the World's First And Largest NFT/Avatar
+					Marketplace
+				</p>
+				<div ref={buttonsRef} className="flex mt-8">
+					<ActionButton size="large" className="mr-4">
+						Explore More
+					</ActionButton>
+					<ActionButton size="large" variant="secondary">
+						Cancel
+					</ActionButton>
+				</div>
+			</div>
+			<div ref={cardsRef} className="flex relative mt-[100px]">
+				<Card
+					img="/ghost.svg"
+					title="Bleeding Ghost"
+					description="$ 152,973.08"
+					className="z-0"
+				/>
+				<Card
+					img="/art.svg"
+					title="Living of the Art"
+					description="$ 552,363.28"
+					className="-mx-12 z-10 -translate-y-[50px]"
+				/>
+				<Card
+					img="/vughae.svg"
+					title="Statue of Vughae"
+					description="$ 351,273.45"
+					className="z-0 translate-y-[40px]"
+				/>
 			</div>
 		</div>
 	);
