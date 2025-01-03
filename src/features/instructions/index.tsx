@@ -2,7 +2,7 @@ import { instructions } from "./data";
 
 export default function Instructions() {
 	return (
-		<section className="mt-[150px] px-4 max-w-7xl mx-auto">
+		<section className="mt-[200px] px-4 max-w-7xl mx-auto">
 			<h2 className="text-3xl text-center mb-12">How it works</h2>
 			<div className="flex flex-wrap gap-[100px] justify-center mt-6 relative">
 				{instructions.map((data, index) => (
