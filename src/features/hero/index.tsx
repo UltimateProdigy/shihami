@@ -101,7 +101,7 @@ export default function Hero() {
 	}, []);
 
 	return (
-		<div className="flex justify-between mt-10">
+		<section className="flex justify-between mt-10">
 			<div ref={containerRef} className="visibility-hidden">
 				<h1
 					ref={headingRef}
@@ -143,6 +143,6 @@ export default function Hero() {
 					className="z-0 translate-y-[40px]"
 				/>
 			</div>
-		</div>
+		</section>
 	);
 }
