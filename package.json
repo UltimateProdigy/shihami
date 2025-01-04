@@ -11,10 +11,12 @@
   },
   "dependencies": {
     "@gsap/react": "^2.1.1",
+    "@types/scrollreveal": "^0.0.11",
     "gsap": "^3.12.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^7.1.1",
+    "scrollreveal": "^4.0.9",
     "split-type": "^0.3.4"
   },
   "devDependencies": {
