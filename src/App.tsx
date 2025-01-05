@@ -7,13 +7,13 @@ import Instructions from "./features/instructions";
 import { Collections } from "./features/collections";
 
 function App() {
+	const sr = ScrollReveal({
+		origin: "bottom",
+		distance: "80px",
+		duration: 2000,
+		reset: false,
+	});
 	useEffect(() => {
-		const sr = ScrollReveal({
-			origin: "bottom",
-			distance: "80px",
-			duration: 2000,
-			reset: false,
-		});
 		sr.reveal(".hero-section", {});
 		sr.reveal(".support-section", { delay: 200 });
 		sr.reveal(".instructions-section", { delay: 300 });
