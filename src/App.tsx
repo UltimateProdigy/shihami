@@ -22,7 +22,7 @@ function App() {
 	}, []);
 
 	return (
-		<div className="px-[49px]">
+		<div className="px-[50px]">
 			<div className="hero-section">
 				<Hero />
 			</div>
